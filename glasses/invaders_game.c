@@ -16,7 +16,7 @@ void move_ship(invaders_t *self, const gm_plugin_imu_sample_t *imu)
         speed = magnitude / divisor + 3;
         if (speed < 4) speed = 4;
         if (speed > 20) speed = 20;
-        target = horizontal < 0 ? speed * Q : -speed * Q;
+        target = horizontal > 0 ? speed * Q : -speed * Q;
     }
     self->ship_vx += (target - self->ship_vx) / 2;
     self->ship_x += self->ship_vx;
