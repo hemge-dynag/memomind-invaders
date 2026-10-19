@@ -1,0 +1,14 @@
+{
+  "id": "com.dynag.invaders.glass",
+  "name": "Space Invader",
+  "version": 1,
+  "abi_version": 256,
+  "provides": {
+    "protocols": [
+      {
+        "id": "gm.invaders",
+        "version": "1.0"
+      }
+    ]
+  }
+}

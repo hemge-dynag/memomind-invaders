@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="theme-color" content="#0b0e14">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+    <title>Space Invader</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <h1 id="app-title">Space Invader</h1>
+      <span id="status" class="status">Démarrage…</span>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2 id="section-controls">Commandes</h2>
+
+        <div class="setting">
+          <label for="sensitivity"><span id="sensitivity-label">Sensibilité de la tête :</span> <span id="sensitivity-value">5</span></label>
+          <input type="range" id="sensitivity" min="1" max="10" step="1" value="5">
+          <p id="sensitivity-hint" class="hint">Plus c’est élevé, plus le vaisseau bouge vite quand tu tournes la tête.</p>
+        </div>
+
+        <div class="setting">
+          <span id="fire-mode-label" class="label">Tir :</span>
+          <div class="segmented" role="radiogroup" aria-labelledby="fire-mode-label">
+            <button type="button" id="fire-auto" class="segment active" role="radio" aria-checked="true">Automatique</button>
+            <button type="button" id="fire-button" class="segment" role="radio" aria-checked="false">Bouton des lunettes</button>
+          </div>
+        </div>
+
+        <div class="setting">
+          <label for="fire-rate"><span id="fire-rate-label">Cadence de tir :</span> <span id="fire-rate-value">4</span></label>
+          <input type="range" id="fire-rate" min="1" max="10" step="1" value="4">
+        </div>
+
+        <button id="new-game" class="primary">Nouvelle partie</button>
+      </section>
+
+      <section class="panel">
+        <h2 id="section-game">Partie en cours</h2>
+        <div class="stat-grid">
+          <div class="stat">
+            <span id="score" class="stat-value">0</span>
+            <span id="score-label" class="stat-label">Score</span>
+          </div>
+          <div class="stat">
+            <span id="wave" class="stat-value">1</span>
+            <span id="wave-label" class="stat-label">Vague</span>
+          </div>
+          <div class="stat">
+            <span id="lives" class="stat-value">3</span>
+            <span id="lives-label" class="stat-label">Vies</span>
+          </div>
+        </div>
+        <p id="game-state" class="hint">En attente</p>
+        <p id="hint" class="hint">Sur les lunettes : bouton = pause. Tourner la tête à droite ou à gauche pour déplacer le vaisseau.</p>
+      </section>
+    </main>
+
+    <script type="module" src="plugin.js"></script>
+  </body>
+</html>

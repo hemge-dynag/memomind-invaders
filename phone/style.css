@@ -1,0 +1,146 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #0b0e14;
+  color: #f2f4f8;
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 16px;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0 0 14px;
+}
+
+.status {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #2a2f3a;
+  white-space: nowrap;
+}
+
+.status.ready { background: #1f4d2e; color: #7fe3a0; }
+.status.error { background: #4d1f24; color: #f28b8b; }
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel {
+  background: #151a24;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.setting {
+  margin-bottom: 18px;
+}
+
+.setting label,
+.setting .label {
+  display: block;
+  font-size: 0.9rem;
+  color: #c3c9d4;
+  margin-bottom: 8px;
+}
+
+.setting input[type="range"] {
+  width: 100%;
+  accent-color: #3a63f0;
+}
+
+.segmented {
+  display: flex;
+  gap: 6px;
+  background: #0f131c;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.segment {
+  flex: 1;
+  font-size: 0.88rem;
+  padding: 10px 8px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #8891a0;
+  cursor: pointer;
+}
+
+.segment.active {
+  background: #3a63f0;
+  color: #fff;
+}
+
+button.primary {
+  font-size: 1rem;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #3a63f0;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+button.primary:disabled {
+  background: #2a2f3a;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.stat-grid {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #0f131c;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: #8891a0;
+  text-align: center;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #8891a0;
+  margin: 0;
+}
+
+.hint + .hint {
+  margin-top: 8px;
+}
