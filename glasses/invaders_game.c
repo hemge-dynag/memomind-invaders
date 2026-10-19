@@ -2,8 +2,10 @@
 
 void move_ship(invaders_t *self, const gm_plugin_imu_sample_t *imu)
 {
-    int32_t gyro_z = imu->gyro_raw[2];
-    int32_t magnitude = gyro_z < 0 ? -gyro_z : gyro_z;
+    /* Horizontal head turns come from the rotated X/Y axes; gyro Z is the
+     * vertical (nod) axis. */
+    int32_t horizontal = (int32_t)imu->gyro_raw[0] - (int32_t)imu->gyro_raw[1];
+    int32_t magnitude = horizontal < 0 ? -horizontal : horizontal;
     int32_t target = 0;
     int32_t maximum = (self->board_width - SHIP_W) * Q;
     int32_t speed;
@@ -14,7 +16,7 @@ void move_ship(invaders_t *self, const gm_plugin_imu_sample_t *imu)
         speed = magnitude / divisor + 3;
         if (speed < 4) speed = 4;
         if (speed > 20) speed = 20;
-        target = gyro_z > 0 ? speed * Q : -speed * Q;
+        target = horizontal < 0 ? speed * Q : -speed * Q;
     }
     self->ship_vx += (target - self->ship_vx) / 2;
     self->ship_x += self->ship_vx;

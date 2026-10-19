@@ -14,7 +14,7 @@ Application **pairée** :
 
 Lunettes (boutons) :
 
-- **tête gauche / droite** : déplacer le vaisseau ;
+- **tête gauche / droite** : déplacer le vaisseau (axe horizontal `gyro_x - gyro_y`) ;
 - **bouton** : en mode tir automatique, met en pause / reprend ; en mode bouton,
   tire ;
 - **appui long 2 s** : quitter (arc de progression autour de l'écran) ;
@@ -46,9 +46,11 @@ Lunettes → téléphone (8 octets, toutes les 400 ms) :
 ## Structure
 
 ```
-glasses/   sources C du plugin lunettes (GlassSDK/examples/invaders)
-phone/     sources du plugin Web (PhoneSDK/examples/invaders)
-builds/    paquets prêts à installer
+glasses/               sources C du plugin lunettes (GlassSDK/examples/invaders)
+phone/                 sources du plugin Web (PhoneSDK/examples/invaders)
+glasses-homeassistant/ sources Home Assistant (lunettes)
+phone-homeassistant/   sources Home Assistant (téléphone)
+builds/                paquets prêts à installer (invaders + homeassistant)
 ```
 
 ## Installation

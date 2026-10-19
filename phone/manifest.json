@@ -36,7 +36,7 @@
   "deviceRequirements": {
     "preferredPluginId": "com.dynag.invaders.glass",
     "requiredPluginId": "com.dynag.invaders.glass",
-    "minPluginVersion": "1",
+    "minPluginVersion": "2",
     "protocols": [
       {
         "id": "gm.invaders",
